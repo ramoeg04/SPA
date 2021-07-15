@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-heroe',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroeComponent implements OnInit {
 
-  constructor() { }
+  constructor(_roterActived: ActivatedRoute) {
+    _roterActived.params.subscribe( params =>{
+      console.log(params['id'])
+    })
+   }
 
   ngOnInit(): void {
   }
