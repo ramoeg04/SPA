@@ -1,3 +1,4 @@
+import { LowerCasePipe } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { Heroe } from '../core/interfaces/heroe';
 
@@ -69,5 +70,19 @@ export class HeoresService {
   getHeroe(i:number){
     return this.heroes[i]
   }
+  search(searchHeroe:string): Heroe[]{
+    let searcArray:Heroe[] =[];
+    searchHeroe = searchHeroe.toLowerCase();
+    for(let i = 0; i< this.heroes.length; i ++){
+      let heroe = this.heroes[i];
+      let name = heroe.nombre.toLowerCase();
+      if(name.indexOf(searchHeroe)>=0){
+        heroe.index = i;
+        searcArray.push(heroe)
+      }
+    }
+    return searcArray;
+  }
+
   
 }

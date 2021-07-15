@@ -14,6 +14,7 @@ export class HeroeComponent implements OnInit {
   constructor(_roterActived: ActivatedRoute, private _heroesService: HeoresService) {
     _roterActived.params.subscribe( params =>{
       this.heroe = _heroesService.getHeroe(params['id']);
+      console.log(this.heroe)
     })
    }
 

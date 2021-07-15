@@ -3,5 +3,6 @@ export interface Heroe {
     bio: String,
     img: String,
     aparicion: String,
-    casa: String
+    casa: String;
+    index?:number;
 }
